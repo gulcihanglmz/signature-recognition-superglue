@@ -1,5 +1,6 @@
 import os
 import json
+import torch
 from tqdm import tqdm
 from itertools import combinations
 from models.matcher_utils import match_signatures_superglue
