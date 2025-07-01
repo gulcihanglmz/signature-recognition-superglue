@@ -1,5 +1,3 @@
-# image_utils.py
-
 import cv2
 
 def resize_with_aspect_ratio(img, max_width=800):
