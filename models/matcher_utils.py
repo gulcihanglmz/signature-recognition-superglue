@@ -31,7 +31,7 @@ def best_rotated_match(img1, img2, matcher, device, ratio_thresh=0.2, conf_thres
             best_conf = conf
             best_angle = angle
 
-    print(f"📐 Best matching angle: {best_angle}°")
+    print(f"Best matching angle: {best_angle}°")
     return best_pred, best_ratio, best_conf, best_angle
 
 

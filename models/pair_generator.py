@@ -78,5 +78,5 @@ def generate_signature_pairs_and_analyze_superglue(root_folder, output_json_path
     with open(output_json_path, 'w') as f:
         json.dump(results, f, indent=4)
 
-    print(f"\n✅ JSON saved to: {output_json_path}")
+    print(f"\nJSON saved to: {output_json_path}")
     return results
