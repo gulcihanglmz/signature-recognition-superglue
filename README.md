@@ -9,25 +9,27 @@ It generates a JSON of match predictions for all signature pairs in your dataset
 
 ```
 .
-├── .venv/                            # Python virtual environment
-├── models/                          # Utility modules
-│   ├── **init**.py
-│   ├── image\_utils.py               # resize, rotate, pad functions
-│   ├── matcher\_utils.py             # best\_rotated\_match wrapper
-│   ├── visualizer.py                # visualize\_signature\_match
-│   ├── pair\_generator.py            # dataset traversal & JSON export
-│   ├── metrics.py                   # comparison‐matrix heatmap
-├── SuperGluePretrainedNetwork/      # Official SuperGlue code & weights
-│   └── models/
-│       ├── matching.py
-│       ├── superpoint.py
-│       ├── superglue.py
-│       └── utils.py
-├── superglue\_config.py              # superpoint + superglue init & config
-├── main.py                          # end-to-end script
+├── .vscode/                               # VS Code settings
+├── models/
+│ ├── weights/                             # downloaded model weights
+│ │ ├── superglue_indoor.pth
+│ │ ├── superglue_outdoor.pth
+│ │ └── superpoint_v1.pth
+│ ├── init.py
+│ ├── image_utils.py
+│ ├── matcher_utils.py
+│ ├── matching.py
+│ ├── metrics.py
+│ ├── pair_generator.py
+│ ├── superglue.py
+│ ├── superpoint.py
+│ ├── utils.py
+│ └── visualizer.py
+├── main.py                               # end-to-end runner
+├── superglue_config.py                   # model initialization & config
 ├── requirements.txt
+├── signature_accuracy_matrix.png        
 └── README.md
-
 ````
 
 ---
@@ -36,11 +38,11 @@ It generates a JSON of match predictions for all signature pairs in your dataset
 
 1. **Clone** this repo and `cd` into it:
    ```bash
-   git clone https://github.com/yourusername/signature-recognition-superglue.git
+   git clone https://github.com/gulcihanglmz/signature-recognition-superglue.git
    cd signature-recognition-superglue
-````
+   ````
 
-2. **Set up** a virtual environment & install dependencies:
+**Set up** a virtual environment & install dependencies:
 
    ```bash
    python -m venv .venv
@@ -51,12 +53,12 @@ It generates a JSON of match predictions for all signature pairs in your dataset
 
    pip install -r requirements.txt
    ```
-3. **Download** the SuperGlue pretrained code and weights, placing them under `SuperGluePretrainedNetwork/` (as shown above).
+2. **Download** the SuperGlue pretrained code and weights, placing them under `SuperGluePretrainedNetwork/` (as shown above).
    You can grab the official implementation from:
    [https://github.com/magicleap/SuperGluePretrainedNetwork](https://github.com/magicleap/SuperGluePretrainedNetwork)
 
 ---
-## 🛠️ Usage
+## Usage
 
 1. **Generate matches JSON**
    Compares every pair of signatures in `root_folder`, saves results to `output_json`:
@@ -97,7 +99,7 @@ It generates a JSON of match predictions for all signature pairs in your dataset
 
 ---
 
-## 🎯 What’s Inside Each Module?
+## What’s Inside Each Module?
 
 * **`superglue_config.py`**
 
@@ -129,7 +131,7 @@ It generates a JSON of match predictions for all signature pairs in your dataset
 
 ---
 
-## 📝 References
+## References
 
 * **SuperGlue Pretrained Network** (Matching backbone):
   [https://github.com/magicleap/SuperGluePretrainedNetwork](https://github.com/magicleap/SuperGluePretrainedNetwork)
@@ -145,5 +147,3 @@ It generates a JSON of match predictions for all signature pairs in your dataset
 Feel free to open issues or pull requests! Any enhancement—e.g. adding finer rotation steps, retraining on signature data, improving visualization—is welcome.
 
 ---
-
-*Happy matching!* 🚀
